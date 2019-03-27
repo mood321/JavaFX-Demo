@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.*?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.layout.GridPane?>
+
+<!--布局控件BorderPane，fx:controller属性用于声明事件处理的Controller，值为Controller类的类全名-->
+<!--xmlns用于声明默认命名空间，这里的声明随着你安装的Java JDK版本号的不同可以不同，但是最好不要比你安装的JDK版本高-->
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml"
+            xmlns:Buttonfx="http://java.sun.com/xml/ns/persistence/orm"
+
+            fx:controller="XmlController.MainPaneController">
+    <top>
+        <StackPane>
+            <children>
+                <ImageView>
+                    <image>
+
+                    </image>
+                </ImageView>
+                <Label style="-fx-font: NORMAL 20Tahoma;"/>
+            </children>
+        </StackPane>
+    </top>
+
+    <center>
+        <GridPane alignment="top_center" hgap="8" vgap="8"
+                  style="-fx-padding:40 0 0 0">
+            <children>
+                <Label text="123"
+                       style="-fx-font: NORMAL 14 Tahoma;"
+                       GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label text="321"
+                       GridPane.columnIndex="0" GridPane.rowIndex="1"
+                       labelFor="$usernameField"/>
+
+                <TextField fx:id="usernameField" prefColumnCount="10"
+                           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+
+                <PasswordField fx:id="password" prefColumnCount="10"
+                               GridPane.columnIndex="1" GridPane.rowIndex="1"
+                               onAction="#handlePasswordFieldAction"/>
+
+                <Button fx:id="submitButton" text="submit"
+                        GridPane.columnIndex="1" GridPane.rowIndex="3"
+                        onAction="#handleSubmitButtonAction"/>
+
+            </children>
+
+        </GridPane>
+    </center>
+</BorderPane>
